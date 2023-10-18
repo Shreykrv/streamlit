@@ -82,6 +82,70 @@ st.snow()
 
 
 
+import streamlit as st
+import pandas as pd
+import matplotlib.pyplot as plt
+import pandas as pd
+import numpy as np
+import seaborn as sns
+
+
+df = pd.read_csv("penguins.csv")
+df1=df.drop(['Unnamed: 0'], axis=1)
+
+st.title("My streamlit web app")
+st.write("This is the raw dataset")
+st.write(df1)
+st.write("Data Description")
+st.write(df1.describe())
+
+st.write("Data Info")
+st.write(df1.info())
+
+st.write("Plot")
+fig = plt.figure(figsize = (19, 10))
+
+plt.bar(df['island'], df['bill_length_mm'], color='blue')
+
+plt.xlabel('island')
+
+plt.ylabel('bill_length_mm')
+
+plt.title('Matplotlib Bar Chart ')
+
+st.pyplot(fig)
+
+
+
+st.write("Scatter Plot")
+fig1 = plt.figure(figsize = (19, 10))
+
+plt.scatter(df['island'], df['bill_length_mm'], color='c')
+
+plt.xlabel('island')
+
+plt.ylabel('bill_length_mm')
+
+plt.title('Matplotlib Bar Chart ')
+
+st.pyplot(fig1)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 # Add a selectbox to the sidebar:
